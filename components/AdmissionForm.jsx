@@ -1,7 +1,7 @@
 export default function AdmissionForm(){
     return(
        <>
-       <form>
+       <form className="py- mt-4">
              <div>
                 <label htmlFor="fullname">Full Name</label>
                 <input type="text" id="fullname" placeholder="Student name" />
@@ -19,6 +19,12 @@ export default function AdmissionForm(){
              </div>
              <button type="submit">Send</button>
        </form>
+
+       <div>
+        <div>
+            Error message
+        </div>
+       </div>
        </>
     )
 }
