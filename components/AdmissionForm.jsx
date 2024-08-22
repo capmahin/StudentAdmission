@@ -13,11 +13,15 @@ export default function AdmissionForm(){
 
              <div>
                 <label htmlFor="Message"></label>
-                <textarea  id="message" placeholder="Type your message">
+                <textarea  
+                className="h-32"
+                id="message" placeholder="Type your message">
 
                 </textarea>
              </div>
-             <button type="submit">Send</button>
+             <button 
+             className="bg-green-700 p-3 text-white font-bold"
+             type="submit">Send</button>
        </form>
 
        <div>
