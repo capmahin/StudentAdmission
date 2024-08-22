@@ -16,7 +16,19 @@ export default function AdmissionForm(){
      console.log("Email name:", email);
      console.log("Message:", message);
 
-     const res = await fetch('',{})
+     const res = await fetch('api/admission',{
+      method:"POST",
+      headers:{
+         "Content-type":"application/json",
+      },
+      body:JSON.stringify({
+         fullname,
+         email,
+         message,
+      }),
+     });
+
+     const {msg} = await res.json();
     }
 
     return(
