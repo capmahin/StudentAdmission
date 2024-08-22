@@ -1,7 +1,7 @@
 export default function AdmissionForm(){
     return(
        <>
-       <form className="py- mt-4">
+       <form className="py- mt-4 border-t flex flex-col gap-5">
              <div>
                 <label htmlFor="fullname">Full Name</label>
                 <input type="text" id="fullname" placeholder="Student name" />
