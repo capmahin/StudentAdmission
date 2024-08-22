@@ -9,8 +9,14 @@ export default function AdmissionForm(){
 
 
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=async (e)=>{
      e.preventDefault();
+
+     console.log("Full name:", fullname);
+     console.log("Email name:", email);
+     console.log("Message:", message);
+
+     const res = await fetch('',{})
     }
 
     return(
