@@ -1,19 +1,34 @@
+'use client';
+
+import { useState } from "react"
+
 export default function AdmissionForm(){
+   const [fullname, setFullname] = useState('');
+   const [email, setEmail]= useState('');
+   const [message, setMessage]= useState('');
     return(
        <>
        <form className="py- mt-4 border-t flex flex-col gap-5">
              <div>
                 <label htmlFor="fullname">Full Name</label>
-                <input type="text" id="fullname" placeholder="Student name" />
+                <input
+                onChange={(e)=> setFullname(e.target.value)}
+                value={fullname}
+                type="text" id="fullname" placeholder="Student name" />
              </div>
              <div>
                 <label htmlFor="email">Email</label>
-                <input type="text"  id="email" placeholder="@gmail.com"/>
+                <input 
+                onChange={(e)=> setEmail(e.target.value)}
+                value={email}
+                type="text"  id="email" placeholder="@gmail.com"/>
              </div>
 
              <div>
                 <label htmlFor="Message"></label>
                 <textarea  
+                onChange={(e)=> setMessage(e.target.value)}
+                value={message}
                 className="h-32"
                 id="message" placeholder="Type your message">
 
