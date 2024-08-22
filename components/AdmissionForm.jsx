@@ -6,9 +6,18 @@ export default function AdmissionForm(){
    const [fullname, setFullname] = useState('');
    const [email, setEmail]= useState('');
    const [message, setMessage]= useState('');
+
+
+
+    const handleSubmit=(e)=>{
+     e.preventDefault();
+    }
+
     return(
        <>
-       <form className="py- mt-4 border-t flex flex-col gap-5">
+       <form 
+       onSubmit={handleSubmit}
+       className="py- mt-4 border-t flex flex-col gap-5">
              <div>
                 <label htmlFor="fullname">Full Name</label>
                 <input
