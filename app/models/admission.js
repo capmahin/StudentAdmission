@@ -9,4 +9,10 @@ const admissionSchema = new Schema({
         minLength:[2, "Name must be larger then 2 Characters"],
         maxLength:[50, "Name must be lesser then 50 characters"]
     },
+
+    email:{
+        type: String,
+        required:[true, "Email is required."],
+        match: [/^[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}$/i, "Invalid email address"],
+    }
 })
