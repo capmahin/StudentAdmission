@@ -6,6 +6,7 @@ export default function AdmissionForm(){
    const [fullname, setFullname] = useState('');
    const [email, setEmail]= useState('');
    const [message, setMessage]= useState('');
+   const [error, setError] = useState([]);
 
 
 
