@@ -21,6 +21,11 @@ export async function POST(req){
             for (let e in error.errors){
                 errorList.push(e.message);
             }
+
+            return NextResponse.json({msg: errorList})
+        }
+        else{
+            return NextResponse.json({msg: "Unable to send message."})
         }
     }
 
