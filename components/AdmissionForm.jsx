@@ -32,7 +32,12 @@ export default function AdmissionForm(){
 
      const {msg, success} = await res.json();
      setError(msg);
-     console.log(error)
+     setSuccess(success)
+      if(success){
+         setFullname("");
+         setEmail("");
+         setMessage("");
+      }
     }
 
     return(
@@ -74,7 +79,13 @@ export default function AdmissionForm(){
 
          {
             error && error.map((e)=> (
-               <div className="text-red-600 px-5 py-2">{e}</div>
+               <div 
+              className={`${
+                success ? "text-green-800" : "text-red-600"
+              } px-5 py-2`}
+            >
+              {e}
+            </div>
             ))
          }
         
