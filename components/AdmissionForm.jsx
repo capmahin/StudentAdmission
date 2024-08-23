@@ -30,6 +30,7 @@ export default function AdmissionForm(){
      });
 
      const {msg} = await res.json();
+     setError(msg);
     }
 
     return(
