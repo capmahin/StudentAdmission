@@ -79,6 +79,7 @@ export default function AdmissionForm(){
 
          {
             error && error.map((e)=> (
+               // eslint-disable-next-line react/jsx-key
                <div 
               className={`${
                 success ? "text-green-800" : "text-red-600"
