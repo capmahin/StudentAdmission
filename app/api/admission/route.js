@@ -7,5 +7,5 @@ export async function POST(req){
      console.log("Email name:", email);
      console.log("Message:", message);
 
-     return NextResponse.json({msg:["hi from contact route"]})
+     return NextResponse.json({msg:["hi from admission route.js"]})
 }
