@@ -31,6 +31,7 @@ export default function AdmissionForm(){
 
      const {msg} = await res.json();
      setError(msg);
+     console.log(error)
     }
 
     return(
