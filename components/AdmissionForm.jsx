@@ -7,6 +7,7 @@ export default function AdmissionForm(){
    const [email, setEmail]= useState('');
    const [message, setMessage]= useState('');
    const [error, setError] = useState([]);
+   const [success, setSuccess] = useState(false)
 
 
 
@@ -29,7 +30,7 @@ export default function AdmissionForm(){
       }),
      });
 
-     const {msg} = await res.json();
+     const {msg, success} = await res.json();
      setError(msg);
      console.log(error)
     }
@@ -70,9 +71,13 @@ export default function AdmissionForm(){
        </form>
 
        <div className="bg-slate-100 flex flex-col">
-        <div className="text-red-600 px-5 py-2">
-            Error message
-        </div>
+
+         {
+            error && error.map((e)=> (
+               <div className="text-red-600 px-5 py-2">{e}</div>
+            ))
+         }
+        
        </div>
        </>
     )
