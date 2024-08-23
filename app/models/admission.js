@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+import mongoose, { Schema } from "mongoose";
 
 
 const admissionSchema = new Schema({
@@ -14,5 +14,20 @@ const admissionSchema = new Schema({
         type: String,
         required:[true, "Email is required."],
         match: [/^[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}$/i, "Invalid email address"],
-    }
-})
+
+    },
+    message: {
+        type: String,
+        required: [true, "Message is required."],
+      },
+    
+      date: {
+        type: Date,
+        default: Date.now,
+      },
+});
+
+const Admission = 
+mongoose.models.Admission || mongoose.model("Admission", admissionSchema);
+
+export default Admission;
