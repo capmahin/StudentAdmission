@@ -4,8 +4,11 @@ import { useState } from "react"
 
 export default function AdmissionForm(){
    const [fullname, setFullname] = useState('');
+   const [fathername, setFathername] = useState('');
+   const [mothername, setMothername] = useState('');
    const [email, setEmail]= useState('');
    const [message, setMessage]= useState('');
+   const [messagep, setMessagep]= useState('');
    const [error, setError] = useState([]);
    const [success, setSuccess] = useState(false)
 
@@ -25,8 +28,11 @@ export default function AdmissionForm(){
       },
       body:JSON.stringify({
          fullname,
+         fathername,
+         mothername,
          email,
          message,
+         messagep,
       }),
      });
 
@@ -35,8 +41,12 @@ export default function AdmissionForm(){
      setSuccess(success)
       if(success){
          setFullname("");
+         setFathername("");
+         setMothername("");
          setEmail("");
          setMessage("");
+         setMessagep("");
+        
       }
     }
 
@@ -46,11 +56,25 @@ export default function AdmissionForm(){
        onSubmit={handleSubmit}
        className="py- mt-4 border-t flex flex-col gap-5">
              <div>
-                <label htmlFor="fullname">Full Name</label>
+                <label htmlFor="fullname">Students Full Name</label>
                 <input
                 onChange={(e)=> setFullname(e.target.value)}
                 value={fullname}
                 type="text" id="fullname" placeholder="Student name" />
+             </div>
+             <div>
+                <label htmlFor="fathername">Students Father Name</label>
+                <input
+                onChange={(e)=> setFathername(e.target.value)}
+                value={fathername}
+                type="text" id="fathername" placeholder="Students Father name" />
+             </div>
+             <div>
+                <label htmlFor="mothername">Students Mother Name</label>
+                <input
+                onChange={(e)=> setMothername(e.target.value)}
+                value={mothername}
+                type="text" id="mothername" placeholder="Students Mother name" />
              </div>
              <div>
                 <label htmlFor="email">Email</label>
@@ -61,18 +85,28 @@ export default function AdmissionForm(){
              </div>
 
              <div>
-                <label htmlFor="Message"></label>
+                <label htmlFor="Message">present Address</label>
                 <textarea  
                 onChange={(e)=> setMessage(e.target.value)}
                 value={message}
                 className="h-32"
-                id="message" placeholder="Type your message">
+                id="message" placeholder="Type your Address">
+
+                </textarea>
+             </div>
+             <div>
+                <label htmlFor="Message">permanent Address</label>
+                <textarea  
+                onChange={(e)=> setMessagep(e.target.value)}
+                value={messagep}
+                className="h-32"
+                id="message" placeholder="Type your Address">
 
                 </textarea>
              </div>
              <button 
              className="bg-green-700 p-3 text-white font-bold"
-             type="submit">Send</button>
+             type="submit">Submit</button>
        </form>
 
        <div className="bg-slate-100 flex flex-col">

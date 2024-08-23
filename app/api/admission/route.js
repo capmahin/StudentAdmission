@@ -4,14 +4,14 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function POST(req){
-    const {fullname, email, message}= await req.json();
+    const {fullname,fathername,mothername, email, message,messagep}= await req.json();
 
     try{
         await connectDB();
-        await Admission.create({fullname,email,message});
+        await Admission.create({fullname,fathername,mothername, email,message,messagep});
        
         return NextResponse.json({
-            msg:["Message sent successfully"],
+            msg:["Admission done  successfully"],
             success:true,
         })
         
@@ -26,7 +26,7 @@ export async function POST(req){
             return NextResponse.json({msg: errorList})
         }
         else{
-            return NextResponse.json({msg: "Unable to send message."})
+            return NextResponse.json({msg: "Unable to admission."})
         }
     }
 

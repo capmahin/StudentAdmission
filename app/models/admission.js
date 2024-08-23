@@ -9,6 +9,20 @@ const admissionSchema = new Schema({
         minLength:[2, "Name must be larger then 2 Characters"],
         maxLength:[50, "Name must be lesser then 50 characters"]
     },
+    fathername:{
+        type: String,
+        required:[true, "Name is required"],
+        trim:true,
+        minLength:[2, "Name must be larger then 2 Characters"],
+        maxLength:[50, "Name must be lesser then 50 characters"]
+    },
+    mothername:{
+        type: String,
+        required:[true, "Name is required"],
+        trim:true,
+        minLength:[2, "Name must be larger then 2 Characters"],
+        maxLength:[50, "Name must be lesser then 50 characters"]
+    },
 
     email:{
         type: String,
@@ -17,6 +31,10 @@ const admissionSchema = new Schema({
 
     },
     message: {
+        type: String,
+        required: [true, "Message is required."],
+      },
+    messagep: {
         type: String,
         required: [true, "Message is required."],
       },
